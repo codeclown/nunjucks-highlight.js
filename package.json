@@ -1,0 +1,30 @@
+{
+  "name": "nunjucks-highlight",
+  "version": "0.0.0",
+  "description": "This is a quick boilerplate for a new npm module",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "testci": "gulp testci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanwild/nunjucks-highlight.git"
+  },
+  "author": "Ryan Wild <spitcode@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanwild/nunjucks-highlight/issues"
+  },
+  "homepage": "https://github.com/ryanwild/nunjucks-highlight",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "gulp": "^3.8.7",
+    "gulp-istanbul": "^0.5.0",
+    "gulp-jshint": "^1.7.1",
+    "gulp-mocha": "^1.0.0",
+    "highlight.js": "^8.4.0",
+    "nunjucks": "^1.1.0",
+    "sinon": "^1.12.1"
+  }
+}
