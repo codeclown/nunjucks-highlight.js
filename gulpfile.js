@@ -13,9 +13,9 @@ gulp.task('jshint', function () {
 });
 
 /*****
- * Test task, runs mocha against unit test files.
+ * Cover task, runs istanbul with mocha against unit test files.
  *****/
-gulp.task('test', function (done) {
+gulp.task('cover', function (done) {
     gulp.src(['lib/**/*.js', 'index.js'])
         .pipe(istanbul()) // Covering files
         .pipe(istanbul.hookRequire()) // Force `require` to return covered files
@@ -28,6 +28,17 @@ gulp.task('test', function (done) {
                 .pipe(istanbul.writeReports()) // Creating the reports after tests runned
                 .on('end', done);
         });
+});
+
+/*****
+ * Cover task, runs istanbul with mocha against unit test files.
+ *****/
+gulp.task('test', function () {
+    return gulp.src(['./test/unit/**/*.test.js'])
+        .pipe(mocha({
+            ui: 'bdd',
+            reporter: 'landing'
+        }));
 });
 
 /**

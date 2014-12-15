@@ -1,5 +1,4 @@
 var assert = require('chai').assert,
-    expect = require('chai').expect,
     fs = require('fs'),
     sinon = require('sinon'),
     hljs = require('highlight.js'),
@@ -21,20 +20,18 @@ describe('NunjucksCodeHighlight', function () {
     // tests
 
     it('should export a function', function () {
-        expect(NunjucksCodeHighlight).to.be.a('function');
+        assert.isFunction(NunjucksCodeHighlight);
     });
 
     it('should compile highlight.js sample code as expected', function(done) {
-        var dataBuffer = fs.readFileSync('test/fixture/input.html');
-        var templateHtml = dataBuffer.toString();
+        var input = fs.readFileSync('test/fixture/input.html').toString();
+        var output = fs.readFileSync('test/fixture/output.html').toString();
         var env = new nunjucks.Environment();
         var highlight = new NunjucksCodeHighlight(nunjucks, hljs);
         env.addExtension('NunjucksCodeHighlight', highlight);
-        env.renderString(templateHtml, function(err, htmlString) {
-            expect(htmlString).to.be.a('string');
-            dataBuffer = fs.readFileSync('test/fixture/output.html');
-            var expectedHtml = dataBuffer.toString();
-            assert.deepEqual(htmlString, expectedHtml);
+        env.renderString(input, function(err, htmlString) {
+            assert.isString(htmlString);
+            assert.strictEqual(htmlString, output);
             done(err);
         });
     });

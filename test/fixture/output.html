@@ -1,62 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nunjucks Test</title>
+    <link rel="stylesheet" href="github.css" />
+</head>
+<body>
+
 <pre><code>
-<span class="hljs-comment">// Ymem takes a functional and an (optional)</span>
-<span class="hljs-comment">// cache of answers.</span>
-
-<span class="hljs-comment">// It returns the fixed point of the functional</span>
-<span class="hljs-comment">// that caches intermediate results.</span>
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Ymem</span><span class="hljs-params">(F, cache)</span> </span>{
- <span class="hljs-keyword">if</span> (!cache)
-  cache = {} ; <span class="hljs-comment">// Create a new cache.</span>
- <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(arg)</span> </span>{
-  <span class="hljs-keyword">if</span> (cache[arg])
-   <span class="hljs-keyword">return</span> cache[arg] ; <span class="hljs-comment">// Answer in cache.</span>
-  <span class="hljs-keyword">var</span> answer = (F(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(n)</span></span>{
-   <span class="hljs-keyword">return</span> (Ymem(F,cache))(n);
-  }))(arg) ; <span class="hljs-comment">// Compute the answer.</span>
-  cache[arg] = answer ; <span class="hljs-comment">// Cache the answer.</span>
-  <span class="hljs-keyword">return</span> answer ;
- } ;
+<span class="hljs-comment">//saved from: http://www.joelonsoftware.com/items/2006/08/01.html</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">(fn, a)</span> {</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-transposed_variable">a.</span><span class="hljs-built_in">length</span>; i++) {
+        a<span class="hljs-matrix">[i]</span> = fn(a<span class="hljs-matrix">[i]</span>);
+    }
 }
 
-<span class="hljs-keyword">var</span> fib = Ymem(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(g)</span> </span>{ <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(n)</span> </span>{
- <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> ;
- <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> ;
- <span class="hljs-keyword">return</span> g(n-<span class="hljs-number">1</span>) + g(n-<span class="hljs-number">2</span>) ;
-}) ; }) ;
-
-<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"result2"</span>).innerHTML = fib(<span class="hljs-number">100</span>);
-</code></pre>
-
-<pre><code>
-    &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"http://www.spitcode.com"</span> /&gt;
-</code></pre>
-
-
-<pre><code>
-<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="hljs-number">0</span>) </span>{
-    <span class="hljs-tag">body</span><span class="hljs-pseudo">:first-of-type</span> <span class="hljs-tag">pre</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
-        <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">'highlight: '</span> <span class="hljs-function">attr</span>(class)</span></span>;
-    <span class="hljs-rule">}</span></span>
-    <span class="hljs-tag">body</span> <span class="hljs-rules">{
-        <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-function">linear-gradient</span>(<span class="hljs-number">45deg</span>, blue, red)</span></span>;
-    <span class="hljs-rule">}</span></span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span><span class="hljs-params">(fn, a, init)</span> {</span>
+    var s = init;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-transposed_variable">a.</span><span class="hljs-built_in">length</span>; i++) {
+        s = fn( s, a<span class="hljs-matrix">[i]</span> );
+    }
+    <span class="hljs-keyword">return</span> s;
 }
+</code></pre>
 
-<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-function">url</span>(<span class="hljs-string">'print.css'</span>)</span>;
-<span class="hljs-at_rule">@<span class="hljs-keyword">page</span></span><span class="hljs-pseudo">:right</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">1cm</span> <span class="hljs-number">2cm</span> <span class="hljs-number">1.3cm</span> <span class="hljs-number">4cm</span></span></span>;
-<span class="hljs-rule">}</span></span>
+<pre><code>
+&lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"http://www.spitcode.com"</span> /&gt;
+</code></pre>
 
-<span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Chunkfive</span></span>; <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url</span>(<span class="hljs-string">'Chunkfive.otf'</span>)</span></span>;
-<span class="hljs-rule">}</span></span>
 
-<span class="hljs-tag">div</span><span class="hljs-class">.text</span>,
-<span class="hljs-id">#content</span>,
-<span class="hljs-tag">li</span><span class="hljs-attr_selector">[lang=ru]</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> Tahoma, Chunkfive, sans-serif</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-function">url</span>(<span class="hljs-string">'hatch.png'</span>) <span class="hljs-comment">/* wtf? */</span></span></span>;  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F0F0F0</span> <span class="hljs-important">!important</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+<pre><code>
+<span class="hljs-class">.area</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> -ms-grid</span></span>; <span class="hljs-comment">/* prefix for IE 10 */</span>
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> grid</span></span>; <span class="hljs-comment">/* or inline-grid */</span>
 <span class="hljs-rule">}</span></span>
 </code></pre>
+
+
+</body>
+</html>
