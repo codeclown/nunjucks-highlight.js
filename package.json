@@ -1,6 +1,6 @@
 {
   "name": "nunjucks-highlight",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "This is a quick boilerplate for a new npm module",
   "main": "index.js",
   "scripts": {
