@@ -1,6 +1,6 @@
 {
   "name": "nunjucks-highlight.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A custom nunjucks tag to highlight code blocks using highlight.js",
   "main": "index.js",
   "scripts": {
