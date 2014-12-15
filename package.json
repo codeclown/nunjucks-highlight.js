@@ -11,12 +11,12 @@
     "type": "git",
     "url": "https://github.com/ryanwild/nunjucks-highlight.js.git"
   },
-  "author": "Ryan Wild <spitcode@gmail.com>",
+  "author": "Ryan Wild <ryan.loves.js@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ryanwild/nunjucks-highlight/issues"
+    "url": "https://github.com/ryanwild/nunjucks-highlight.js/issues"
   },
-  "homepage": "https://github.com/ryanwild/nunjucks-highlight",
+  "homepage": "https://github.com/ryanwild/nunjucks-highlight.js",
   "devDependencies": {
     "chai": "^1.9.1",
     "gulp": "^3.8.7",
