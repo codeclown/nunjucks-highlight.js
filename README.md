@@ -7,7 +7,7 @@
 
 An extension for [Nunjucks][nunjucks] that adds support for [Highlight.js][highlightjs] `code` blocks.  Built into [CrocodileJS][crocodile-url]!
 
-<img src="https://cdn.rawgit.com/niftylettuce/nunjucks-highlight.js/master/media/screenshot.png" width="600" height="74" />
+<img src="https://cdn.rawgit.com/niftylettuce/nunjucks-highlight.js/master/media/example-screenshot.png" width="600" height="74" />
 
 
 ## Install
