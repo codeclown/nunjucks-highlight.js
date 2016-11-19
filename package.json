@@ -19,7 +19,8 @@
     "gulp-jshint": "^2.0.1",
     "gulp-mocha": "^3.0.1",
     "highlight.js": "^9.7.0",
-    "nunjucks": "^2.5.2",
+    "jshint": "^2.9.4",
+    "nunjucks": "^3.0.0",
     "sinon": "^1.12.1"
   },
   "homepage": "https://github.com/ryanwild/nunjucks-highlight.js",
