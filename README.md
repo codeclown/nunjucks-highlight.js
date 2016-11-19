@@ -32,7 +32,11 @@ env.addExtension('NunjucksCodeHighlight', highlight);
 
 Add code blocks to your templates:
 
-```nunjucks
+> Automatic language detection:
+
+Input:
+
+```njk
 {% code %}
 (function () {
   console.log('hello world');
@@ -48,6 +52,25 @@ Output:
 }())<span class="hljs-comment">;</span>
 ```
 
+> Specify language of code block:
+
+Input:
+
+```njk
+{% code %}js
+(function() {
+  console.log('hello world');
+}());
+{% endcode %}
+```
+
+Output:
+
+```html
+(<span class="hljs-name">function</span>() {
+  console.log(<span class="hljs-name">'hello</span> world')<span class="hljs-comment">;</span>
+}())<span class="hljs-comment">;</span>
+```
 
 ## License
 
