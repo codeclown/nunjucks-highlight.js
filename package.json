@@ -1,7 +1,7 @@
 {
   "name": "nunjucks-highlight.js",
   "description": "A custom nunjucks tag to highlight code blocks using highlight.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Ryan Wild <ryan.loves.js@gmail.com>",
   "bugs": {
     "url": "https://github.com/ryanwild/nunjucks-highlight.js/issues"
