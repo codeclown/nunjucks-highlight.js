@@ -1,27 +1,88 @@
+
 # Nunjucks Code Highlight
 
-A custom nunjucks tag to highlight code blocks using highlight.js
+[![Slack Status][slack-image]][slack-url]
+[![NPM version][npm-image]][npm-url]
+[![MIT License][license-image]][license-url]
+
+An extension for [Nunjucks][nunjucks] that adds support for [Highlight.js][highlightjs] `code` blocks.  Built into [CrocodileJS][crocodile-url]!
+
+<img src="https://cdn.rawgit.com/niftylettuce/nunjucks-highlight.js/master/media/example-screenshot.png" width="600" height="74" />
+
+
+## Install
+
+```bash
+npm install --save nunjucks-highlight.js
+```
+
+
+## Usage
+
+Register the extension with nunjucks:
+
+```js
+import NunjucksCodeHighlight from 'nunjucks-highlight.js';
+import hljs from 'highlight.js';
+
+const highlight = new NunjucksCodeHighlight(nunjucks, hljs);
+const env = nunjucks.configure('views', {});
+env.addExtension('NunjucksCodeHighlight', highlight);
+```
+
+Add code blocks to your templates:
+
+> Automatic language detection:
+
+Input:
+
+```njk
+{% code %}
+(function () {
+  console.log('hello world');
+}());
+{% endcode %}
+```
+
+Output:
+
+```html
+(<span class="hljs-name">function</span>() {
+  console.log(<span class="hljs-name">'hello</span> world')<span class="hljs-comment">;</span>
+}())<span class="hljs-comment">;</span>
+```
+
+> Specify language of code block:
+
+Input:
+
+```njk
+{% code %}js
+(function() {
+  console.log('hello world');
+}());
+{% endcode %}
+```
+
+Output:
+
+```html
+(<span class="hljs-name">function</span>() {
+  console.log(<span class="hljs-name">'hello</span> world')<span class="hljs-comment">;</span>
+}())<span class="hljs-comment">;</span>
+```
 
 ## License
 
-The MIT License (MIT)
+[MIT][license]
 
-Copyright (c) 2014 Chad Engler
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+[nunjucks]: https://github.com/mozilla/nunjucks
+[highlightjs]: https://github.com/isagalaev/highlight.js/
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg
+[license-url]: LICENSE
+[npm-image]: https://img.shields.io/npm/v/nunjucks-highlight.js.svg
+[npm-url]: https://npmjs.org/package/nunjucks-highlight.js
+[crocodile-url]: https://crocodilejs.com
+[slack-image]: http://slack.crocodilejs.com/badge.svg
+[slack-url]: http://slack.crocodilejs.com

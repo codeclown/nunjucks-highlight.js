@@ -7,34 +7,31 @@
 </head>
 <body>
 
-<pre><code>
-<span class="hljs-comment">//saved from: http://www.joelonsoftware.com/items/2006/08/01.html</span>
+<pre><code class="hljs"><span class="hljs-comment">//saved from: http://www.joelonsoftware.com/items/2006/08/01.html</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">(fn, a)</span> {</span>
-    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-transposed_variable">a.</span><span class="hljs-built_in">length</span>; i++) {
-        a<span class="hljs-matrix">[i]</span> = fn(a<span class="hljs-matrix">[i]</span>);
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; a.<span class="hljs-built_in">length</span>; i++) {
+        a[i] = fn(a[i]);
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span><span class="hljs-params">(fn, a, init)</span> {</span>
     var s = init;
-    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-transposed_variable">a.</span><span class="hljs-built_in">length</span>; i++) {
-        s = fn( s, a<span class="hljs-matrix">[i]</span> );
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; a.<span class="hljs-built_in">length</span>; i++) {
+        s = fn( s, a[i] );
     }
     <span class="hljs-keyword">return</span> s;
 }
-</code></pre>
+ </code></pre>
 
-<pre><code>
-&lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"http://www.spitcode.com"</span> /&gt;
-</code></pre>
+<pre><code class="hljs">&lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"http://www.spitcode.com"</span> /&gt;
+ </code></pre>
 
 
-<pre><code>
-<span class="hljs-class">.area</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> -ms-grid</span></span>; <span class="hljs-comment">/* prefix for IE 10 */</span>
-    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> grid</span></span>; <span class="hljs-comment">/* or inline-grid */</span>
-<span class="hljs-rule">}</span></span>
-</code></pre>
+<pre><code class="hljs"><span class="hljs-selector-class">.area</span> {
+    <span class="hljs-attribute">display</span>: -ms-grid; <span class="hljs-comment">/* prefix for IE 10 */</span>
+    <span class="hljs-attribute">display</span>: grid; <span class="hljs-comment">/* or inline-grid */</span>
+}
+ </code></pre>
 
 
 </body>

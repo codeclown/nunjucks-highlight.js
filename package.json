@@ -1,30 +1,57 @@
 {
   "name": "nunjucks-highlight.js",
-  "version": "0.0.4",
   "description": "A custom nunjucks tag to highlight code blocks using highlight.js",
-  "main": "index.js",
-  "scripts": {
-    "test": "gulp test",
-    "testci": "gulp testci"
+  "version": "0.0.4",
+  "author": "Ryan Wild <ryan.loves.js@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/ryanwild/nunjucks-highlight.js/issues"
   },
+  "contributors": [
+    {
+      "name": "Nick Baugh",
+      "email": "niftylettuce@gmail.com"
+    }
+  ],
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.8.7",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-mocha": "^3.0.1",
+    "highlight.js": "^9.7.0",
+    "jshint": "^2.9.4",
+    "nunjucks": "^3.0.0",
+    "sinon": "^1.12.1"
+  },
+  "homepage": "https://github.com/ryanwild/nunjucks-highlight.js",
+  "keywords": [
+    "block",
+    "checker",
+    "code",
+    "extension",
+    "highlight",
+    "highlight.js",
+    "highlightjs",
+    "hljs",
+    "inline",
+    "jinja",
+    "jinja2",
+    "njk",
+    "nunjuck",
+    "nunjucks",
+    "pre",
+    "pygment",
+    "pygments",
+    "syntax"
+  ],
+  "license": "MIT",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ryanwild/nunjucks-highlight.js.git"
   },
-  "author": "Ryan Wild <ryan.loves.js@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ryanwild/nunjucks-highlight.js/issues"
-  },
-  "homepage": "https://github.com/ryanwild/nunjucks-highlight.js",
-  "devDependencies": {
-    "chai": "^1.9.1",
-    "gulp": "^3.8.7",
-    "gulp-istanbul": "^0.5.0",
-    "gulp-jshint": "^1.7.1",
-    "gulp-mocha": "^1.0.0",
-    "highlight.js": "^8.4.0",
-    "nunjucks": "^1.1.0",
-    "sinon": "^1.12.1"
+  "scripts": {
+    "test": "gulp test",
+    "testci": "gulp testci"
   }
 }
